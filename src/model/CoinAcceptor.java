@@ -1,17 +1,33 @@
 package model;
 
-public class CoinAcceptor {
-    private int amount;
+public class CoinAcceptor implements PaymentAcceptor {
+    private int balance;
 
-    public CoinAcceptor(int amount) {
-        this.amount = amount;
+    public CoinAcceptor(int initialBalance) {
+        this.balance = initialBalance;
     }
 
-    public int getAmount() {
-        return amount;
+    @Override
+    public int getBalance() {
+        return balance;
     }
 
-    public void setAmount(int amount) {
-        this.amount = amount;
+    @Override
+    public void addFunds(int amount) {
+        balance += amount;
+    }
+
+    @Override
+    public void deductFunds(int amount) {
+        if (balance >= amount) {
+            balance -= amount;
+        } else {
+            throw new IllegalArgumentException("Недостаточно средств.");
+        }
+    }
+
+    @Override
+    public boolean canAfford(int price) {
+        return balance >= price;
     }
 }
