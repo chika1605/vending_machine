@@ -1,0 +1,11 @@
+git switch --create home_work_25
+git switch home_work_25
+git add .
+git commit -m "Added AppRunner class to simulate the vending machine interaction with different payment methods (coin, bill, card). Implemented product selection, balance management, recharge functionality, and error handling for user actions. The program displays available products based on the balance and allows the user to make purchases or add funds."
+git commit -m "Implemented BillAcceptor class to manage bill-based payments in the vending machine. The class includes functionality to add funds, deduct funds, and check if the balance is sufficient for a purchase. Added validation for accepted bill denominations (10, 20, 50, 100, 200, 500)."
+git commit -m "Implemented CardAcceptor class to manage card-based payments in the vending machine. The class includes functionality to add funds, deduct funds, and check if the balance is sufficient for a purchase. Added validation for card number (16 digits) and OTP (4 digits) during payment processing."
+git commit -m "Updated the CoinAcceptor class to implement the PaymentAcceptor interface. The class now manages balance, allows adding and deducting funds, and checks if the balance is sufficient for purchases."
+git commit -m "we have created a text file for the used commands"
+git push -u origin home_work_25
+touch commands.txt
+git reset --soft HEAD~1
